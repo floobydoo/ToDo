@@ -1,80 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
     <head>
-        <!--Import Google Icon Font-->
-        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <!--Import materialize.css-->
-        <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-        <link type="text/css" rel="stylesheet" href="css/blog.css">
-        <!--Let browser know website is optimized for mobile-->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <link rel="icon" href="data:;base64,iVBORwOKGgo=">
-        <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
-        <script>tinymce.init({selector: 'textarea'});</script>
-    </head>
-    <body>
-        <header>
-            <nav>
-                <div class="nav-wrapper">
-                    <a href="#" class="brand-logo center">To Do</a>
-                    <ul class="right hide-on-med-and-down">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="admin.html">Admin</a></li>
-                    </ul>
-                    <ul id="slide-out" class="side-nav bubbles">
-                        <li><a href="index.html" class="">Home <span id="postCount" class="badge new"></span></a></li>
-                        <li><a href="admin.html" class="">Admin</a></li>
-                    </ul>
-                    <a href="#" data-activates="slide-out" class="button-collapse show-on-large"><i class="mdi-navigation-menu"></i></a>
-                </div>
-            </nav>
-        </header>
-        <main>
-            <div>
-                <br><br><br>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <h1 class="center-align">What's Needs To Be Done</h1>
-                </div>
-                <div class="row">
-                    <div class="col s12 main-container">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 
+        <title>Multi Task</title>
+        <link rel="shortcut icon" href="img/favicon.png"/>
+        <link rel="stylesheet" href="css/snakestyle.css">
+            <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400' rel='stylesheet' type='text/css'>
+                <script type="text/javascript">
+                    var _gaq = _gaq || [];
+                    _gaq.push(['_setAccount', 'UA-35796782-1']);
+                    _gaq.push(['_trackPageview']);
 
+                    (function () {
+                        var ga = document.createElement('script');
+                        ga.type = 'text/javascript';
+                        ga.async = true;
+                        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                        var s = document.getElementsByTagName('script')[0];
+                        s.parentNode.insertBefore(ga, s);
+                    })();
+                </script>
+                </head>
+                <div id="promo">
+                    <div class="center-content">
+                        <h1 id="date" class="center-text promo-fade-slow"></h1>
+                        <img id="hero" class="promo-fade" src="images/cloud9.png" alt=""/>
+                        <div class="button-container">
+                            <a class="button" href="main.html">Enter</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </main>
-        <footer class="page-footer">
-            <div class="container">
-                <p><a href="#">Back To The Top</a></p>
-            </div>
-            <div class="footer-copyright">
-                <div class="container">
-                    @2016 Matthew
-                </div>
-            </div>
-            <script id="blogs-template" type="text/x-handlebars-template">
-          {{#each posts}}
-            <ul class="collection blog-post">
-    <li class="collection-item avatar">
-      <img class="material-icons circle" src="images/parallax1.jpg"></img>
-      <span class="title blog-post-title">Task: {{title}}</span>
-      <div>{{{content}}}<br></div>
-      <p class="blog-post-meta">At {{format created}} by {{authorEmail}}</p>
-      
-      <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-    </li>
-    </ul>
-          {{/each}}
-      </script>
-        </footer>
-        <!--Import jQuery before materialize.js-->
-        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-        <script type="text/javascript" src="js/materialize.min.js"></script>
-        <script type="text/javascript" src="libs/backendless.js"></script>
-        <script type="text/javascript" src="js/blog.js"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.12.0/moment.min.js"></script>
-        <script type="text/javascript" src="js/handlebars-v4.0.5.js"></script>
+    <body>
+        
     </body>
 </html>

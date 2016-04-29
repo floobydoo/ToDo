@@ -34,7 +34,6 @@ $ (function(){
     var blogHTML = blogTemplate(wrapper);
     
     $('.main-container').html(blogHTML);
-    
 });
 
 function Posts(args) {
@@ -44,3 +43,9 @@ function Posts(args) {
     this.authorEmail = args.authorEmail || "";
 }
  $(".button-collapse").sideNav();
+ 
+ $(document).on('click','.trash', function(event) {
+        console.log(event);
+        Backendless.Persistence.of(Posts).remove(event.target.attributes.data.nodeValue);
+        location.reload();
+    });
