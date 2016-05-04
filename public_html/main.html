@@ -12,18 +12,18 @@
         <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
         <script>tinymce.init({selector: 'textarea'});</script>
     </head>
-    <body background="images/dug.jpg">
+    <body background="images/BG.png">
         <header>
             <nav>
                 <div class="nav-wrapper">
                     <a href="#" class="brand-logo center">Public Tasks</a>
                     <ul class="right hide-on-med-and-down">
-                        <li><a href="index.html">Public</a></li>
-                        <li><a href="admin.html">My Tasks</a></li>
+                        <li><a href="main.html">Tasks</a></li>
+                        <li><a href="admin.html">Add Tasks</a></li>
                     </ul>
                     <ul id="slide-out" class="side-nav bubbles">
-                        <li><a href="index.html" class="">Public<span id="postCount" class="badge new"></span></a></li>
-                        <li><a href="admin.html" class="">My Tasks</a></li>
+                        <li><a href="main.html" class="">Tasks<span id="postCount" class="badge new"></span></a></li>
+                        <li><a href="admin.html" class="">Add Tasks</a></li>
                         <li><a href="create.html" class="">Create Account</a></li>
                     </ul>
                     <a href="#" data-activates="slide-out" class="button-collapse show-on-large"><i class="mdi-navigation-menu"></i></a>
@@ -36,7 +36,7 @@
             </div>
             <div class="container">
                 <div class="row">
-                    <h1 class="center-align">What's Needs To Be Done</h1>
+                    <h1 class="center-align">My Tasks</h1>
                 </div>
                 <div class="row">
                     <div class="col s12 main-container">
@@ -55,17 +55,33 @@
                 </div>
             </div>
             <script id="blogs-template" type="text/x-handlebars-template">
-    {{#each posts}}
-            <ul href="#" class="collection blog-post z-depth hoverable transparent">       
-    <li class="collection-item avatar">
-      <img class="material-icons circle" src="images/unnamed.png"></img>
-      <span class="title blog-post-title">Task: {{title}}</span>
-      <div>{{{content}}}</div>
-      <i class="blog-post-meta">At {{format created}} by {{authorEmail}}</i>
-      <i src="images/trashcon.png" class="material-icons secondary-content trash" type="submit" name="action" data={{objectId}}>delete</i>
-    </li>
-    </ul>
-    {{/each}}
+            {{#each posts}}
+            {{#if completed}}
+            <ul href="#" class="collection blog-post z-depth hoverable">       
+                <li class="collection-item avatar">
+                    <img class="material-icons circle" src="images/bronzed.png"></img>
+                    <span class="title blog-post-title">Task: {{title}}</span>
+                    <div>{{{content}}}</div>
+                    <i class="blog-post-meta">At {{format created}} by {{authorEmail}}</i>
+                    <i src="images/trashcon.png" class="material-icons secondary-content trash" type="submit" name="action" data={{objectId}}>delete</i>
+                    <button class="materialize-icons primary-content completed" type="submit" name="action" data={{objectId}}><label>Completed:</label>
+                    <p><b>{{completed}}</b></p>
+                </li>
+            </ul>
+            {{else}}
+            <ul href="#" class="collection blog-post z-depth hoverable">       
+                <li class="collection-item avatar">
+                    <img class="material-icons circle" src="images/bronzed.png"></img>
+                    <span class="title blog-post-title">Task: {{title}}</span>
+                    <div>{{{content}}}</div>
+                    <i class="blog-post-meta">At {{format created}} by {{authorEmail}}</i>
+                    <i src="images/trashcon.png" class="material-icons secondary-content trash" type="submit" name="action" data={{objectId}}>delete</i>
+                    <button class="materialize-icons primary-content completed" type="submit" name="action" data={{objectId}}><label>Completed:</label>
+                    <p><b>{{completed}}</b></p>
+                </li>
+            </ul>
+        {{/if}}
+        {{/each}}
             </script>
         </footer>
         <!--Import jQuery before materialize.js-->

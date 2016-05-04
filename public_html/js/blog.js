@@ -5,7 +5,8 @@ $ (function(){
     
     Backendless.initApp(APPLICATION_ID, SECRET_KEY, VERSION);
     
-    var postsCollection = Backendless.Persistence.of(Posts).find();
+    var dataQuery = {condition: "ownerId = '"+Backendless.LocalCache.get("current-user-id")+"'" }
+    var postsCollection = Backendless.Persistence.of(Posts).find(dataQuery);
     
     console.log(postsCollection);
     
@@ -41,11 +42,20 @@ function Posts(args) {
     this.title = args.title || "";
     this.content = args.content || "";
     this.authorEmail = args.authorEmail || "";
-}
+ }
  $(".button-collapse").sideNav();
  
  $(document).on('click','.trash', function(event) {
         console.log(event);
         Backendless.Persistence.of(Posts).remove(event.target.attributes.data.nodeValue);
+        location.reload();
+    });
+    
+ $(document).on('click','.completed', function(event) {
+        console.log(event);
+        var completed = Backendless.Persistence.of(Posts).findById(event.currentTarget.attributes.data.nodeValue);
+        completed["completed"] = !completed["completed"];
+        var tasksCollection = Backendless.Persistence.of(Posts);
+        tasksCollection.save(completed);
         location.reload();
     });
