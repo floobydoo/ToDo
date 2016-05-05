@@ -60,12 +60,11 @@
             <ul href="#" class="collection blog-post z-depth hoverable">       
                 <li class="collection-item avatar">
                     <img class="material-icons circle" src="images/bronzed.png"></img>
-                    <span class="title blog-post-title">Task: {{title}}</span>
-                    <div>{{{content}}}</div>
-                    <i class="blog-post-meta">At {{format created}} by {{authorEmail}}</i>
+                    <span class="title blog-post-title"><strike>Task: {{title}}</strike></span>
+                    <div><strike>{{{content}}}</strike></div>
+                    <i class="blog-post-meta"><strike>At {{format created}} by {{authorEmail}}</strike></i>
                     <i src="images/trashcon.png" class="material-icons secondary-content trash" type="submit" name="action" data={{objectId}}>delete</i>
-                    <button class="materialize-icons primary-content completed" type="submit" name="action" data={{objectId}}><label>Completed:</label>
-                    <p><b>{{completed}}</b></p>
+                    <button class="primary-content completed waves-effect waves-light" type="submit" name="action" data={{objectId}}><label>Completed</label>
                 </li>
             </ul>
             {{else}}
@@ -76,8 +75,7 @@
                     <div>{{{content}}}</div>
                     <i class="blog-post-meta">At {{format created}} by {{authorEmail}}</i>
                     <i src="images/trashcon.png" class="material-icons secondary-content trash" type="submit" name="action" data={{objectId}}>delete</i>
-                    <button class="materialize-icons primary-content completed" type="submit" name="action" data={{objectId}}><label>Completed:</label>
-                    <p><b>{{completed}}</b></p>
+                    <button class="primary-content completed waves-effect waves-light" type="submit" name="action" data={{objectId}}><label class="">Incomplete</label>
                 </li>
             </ul>
         {{/if}}
